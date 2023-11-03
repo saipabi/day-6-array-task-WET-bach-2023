@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    
+
+    const xhr = new XMLHttpRequest();
+xhr.open("GET", "https://restcountries.com/v3.1/all");
+xhr.send();
+xhr.onload = function() {
+    console.log(xhr.responseText);
+    const arr = JSON.parse(xhr.responseText);
+    console.log(arr);
+
+        var cur=[];
+        for(i=0;i<data.length;i++){
+            if(data[i].currencies[0].code==="USD")
+            {
+                console.log("name:",data[i].name,"==>",data[i].currencies[0].code)
+            }
+        }
+    
+
+    for (const country of arr) {
+        <!-- console.log(country); -->
+        console.log(country.flag, country.capital,country.name.common);
+    }
+    
+}
+</script>
+</body>
+</html>
